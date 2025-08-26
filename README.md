@@ -19,23 +19,21 @@ I accomplish this objective in four parts:
 - Implementation of Kahn's algorithm to order the courses in such a way that all prerequisites are fulfilled before a given course is scheduled.
 - User interface in ipywidgets where the user can select topics of interest from a dropdown list, select the courses they would like to complete from the returned course list, and be provided with a recommended course schedule that allows the user to complete all courses and prerequisites required, ensuring that prerequisites are always completed before the courses that require them.
 
-## Step By Step Overview:
-
-### Web Scraping
-Packages used: Selenium, BeautifulSoup, Webdriver Manager, Pandas
+## Project Walkthrough:
+DataCamp courses are connected to each other via prerequisite - course relationships.  Introductory level courses typically will not have prerequisites, however Intermediate and Advanced level courses almost always do.  In this example, you can see that the DataCamp course Introduction to Deep Learning with PyTorch has 3 direct prerequisites and a total of 8 courses that must be completed before Deep Learning with PyTorch can be started.
 ![alt text](https://github.com/juliakannapell/datacamp-course-scheduler/blob/main/DataCamp_Course_Flowchart.jpg?raw=true)
 
+### Web Scraping
+I accessed the DataCamp course data using Selenium and BeautifulSoup, as the available API did not include all of the fields I needed.  For each of the 582 available courses, I returned the course title, course description, and list of prerequisites (if any) for that course.
 
 ### Custom Named Entity Recognition Model
-Packages used: SpaCy
+The course description includes detailed information about the topics that the course covers and is much more inclusive that the course title alone.  For example, the "Monte Carlo Simulations in Python" course covers NumPy, SciPy and Seaborn which are mentioned in the description but not the title.  For an advanced Data Scientist who is looking to learn specific Python packages, this information is very valuable.
+![alt text](https://github.com/juliakannapell/datacamp-course-scheduler/blob/main/Monte_Carlo_Simulation_Description.jpg?raw=true)
+To obtain the relevant topics from each course description, I created a custom Named Entity Recognition model using SpaCy to identify 4 types of entities: Python packages, software (i.e. Tableau, PowerBI), programming languages, and data concepts (i.e. regression, clustering). This model accurately identifies entities from these 4 categories with an average F1 score of 0.9465.
 
-### Kahn's Algorithm
-Packages used: networkx
+These captured named entities will be used to filter courses to those that cover a specific topic or tool.
 
-### User Interface
-Packages used: ipywidgets
-
-## Named Entity Recognition Model Metrics:
+#### Named Entity Recognition Model Metrics:
 5 Fold Cross Validation
 - Fold 1 F1: 0.9649
 - Fold 2 F1: 0.9526
@@ -47,6 +45,18 @@ Cross Validation Results
 - Average F1: 0.9465 (±0.0224)
 - Average Precision: 0.9532 (±0.0123)
 - Average Recall: 0.9544 (±0.0172)
+
+### Kahn's Algorithm
+The DataCamp web scraping provided a list of courses and their associated prerequisites.  Each course's prerequisites must be completed before the course can be started and multiple courses may share the same prerequisites.  I used Kahn's algorithm to find the optimal course order to ensure that levels of prerequisites were included for each course and that all prerequisites were completed before the course where they were required.
+
+### User Interface
+The user interface allows the user to select, from a dropdown, topics of interest that they would like to study.  A subset of courses is provided that covers that specific topic, and the user is able to select some or all of the provided courses to complete.  Once they click submit, all levels of prerequisites are gathered for each chosen course and, using Kahn's algorithm, are arranged in the optimal order to be completed.
+
+Using the example of "Introduction to Deep Learning with PyTorch" mentioned earlier, you can see that the Optimal Course Order returned allows all prerequisites to be completed before the course in which they are required.
+
+![alt text](https://github.com/juliakannapell/datacamp-course-scheduler/blob/main/DataCamp_Course_Flowchart.jpg?raw=true)
+
+![alt text](https://github.com/juliakannapell/datacamp-course-scheduler/blob/main/Optimal_Course_Order.jpg?raw=true)
 
 ## Constraints:
 1. I considered using DataCamp's API to web scrape the course data, however their available API did not have the course prerequisite field that my output depended on.  As a result, I built my own web scraping process using Selenium and BeautifulSoup.
