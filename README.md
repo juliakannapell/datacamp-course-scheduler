@@ -60,7 +60,7 @@ Using the example of "Introduction to Deep Learning with PyTorch" mentioned earl
 Course and Prerequisite Relationships
 ![alt text](https://github.com/juliakannapell/datacamp-course-scheduler/blob/main/DataCamp_Course_Flowchart.jpg?raw=true)
 
-Optimal Course Order </n>
+Optimal Course Order <br>
 ![alt text](https://github.com/juliakannapell/datacamp-course-scheduler/blob/main/Optimal_Course_Order.jpg?raw=true)
 
 ## Constraints:
