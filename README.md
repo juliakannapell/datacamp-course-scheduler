@@ -56,7 +56,6 @@ Using the example of "Introduction to Deep Learning with PyTorch" mentioned earl
 
 ![alt text](https://github.com/juliakannapell/datacamp-course-scheduler/blob/main/DataCamp_Course_Flowchart.jpg?raw=true)
 
-![alt text](https://github.com/juliakannapell/datacamp-course-scheduler/blob/main/Optimal_Course_Order.jpg?raw=true)
 
 ## Constraints:
 1. I considered using DataCamp's API to web scrape the course data, however their available API did not have the course prerequisite field that my output depended on.  As a result, I built my own web scraping process using Selenium and BeautifulSoup.
