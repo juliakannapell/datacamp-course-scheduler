@@ -4,7 +4,6 @@
 
 ## Contents in the Repository:
 1. Jupyter Notebook (includes User Interface)
-2. Model Card
 
 ## Background
 DataCamp is an online learning platform, specializing in courses for Data Science, Data Engineering, and Data Analysis.  This platform hosts 582 courses encompassing Data Cleaning, Data Discovery, Data Modeling, AI tools, and much more.  DataCamp courses are often linked together through Prerequisite relationships, where certain courses must be completed before others can be started.
