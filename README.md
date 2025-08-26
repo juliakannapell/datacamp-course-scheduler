@@ -19,10 +19,11 @@ I accomplish this objective in four parts:
 - Implementation of Kahn's algorithm to order the courses in such a way that all prerequisites are fulfilled before a given course is scheduled.
 - User interface in ipywidgets where the user can select topics of interest from a dropdown list, select the courses they would like to complete from the returned course list, and be provided with a recommended course schedule that allows the user to complete all courses and prerequisites required, ensuring that prerequisites are always completed before the courses that require them.
 
-## Packages Used:
+## Step By Step Overview:
 
 ### Web Scraping
 Packages used: Selenium, BeautifulSoup, Webdriver Manager, Pandas
+![alt text](https://github.com/juliakannapell/datacamp-course-scheduler/datacamp_course_flow.jpg?raw=true)
 
 ### Custom Named Entity Recognition Model
 Packages used: SpaCy
