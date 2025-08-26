@@ -42,11 +42,11 @@ Packages used: ipywidgets
 - Fold 4 F1: 0.9025
 - Fold 5 F1: 0.9555
 
-=== CROSS VALIDATION RESULTS ===
-Average F1: 0.9465 (±0.0224)
-Average Precision: 0.9532 (±0.0123)
-Average Recall: 0.9544 (±0.0172)
+Cross Validation Results
+- Average F1: 0.9465 (±0.0224)
+- Average Precision: 0.9532 (±0.0123)
+- Average Recall: 0.9544 (±0.0172)
 
-Constraints:
+## Constraints:
 1. I considered using DataCamp's API to web scrape the course data, however their available API did not have the course prerequisite field that my output depended on.  As a result, I built my own web scraping process using Selenium and BeautifulSoup.
 2. Because I created the dataset I used for my custom Named Entity Recognition model, I used a lower number of train and test rows as each one had to be tagged manually.  Despite this, I ended up with high accuracy metrics for the model.
