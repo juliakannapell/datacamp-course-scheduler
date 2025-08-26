@@ -29,6 +29,7 @@ I accessed the DataCamp course data using Selenium and BeautifulSoup, as the ava
 ### Custom Named Entity Recognition Model
 The course description includes detailed information about the topics that the course covers and is much more inclusive that the course title alone.  For example, the "Monte Carlo Simulations in Python" course covers NumPy, SciPy and Seaborn which are mentioned in the description but not the title.  For an advanced Data Scientist who is looking to learn specific Python packages, this information is very valuable.
 
+Monte Carlo Simulation in Python Course Description
 ![alt text](https://github.com/juliakannapell/datacamp-course-scheduler/blob/main/Monte_Carlo_Simulation_Description.jpg?raw=true)
 
 To obtain the relevant topics from each course description, I created a custom Named Entity Recognition model using SpaCy to identify 4 types of entities: Python packages, software (i.e. Tableau, PowerBI), programming languages, and data concepts (i.e. regression, clustering). This model accurately identifies entities from these 4 categories with an average F1 score of 0.9465.
@@ -59,7 +60,7 @@ Using the example of "Introduction to Deep Learning with PyTorch" mentioned earl
 Course and Prerequisite Relationships
 ![alt text](https://github.com/juliakannapell/datacamp-course-scheduler/blob/main/DataCamp_Course_Flowchart.jpg?raw=true)
 
-Optimal Course Order
+Optimal Course Order </n>
 ![alt text](https://github.com/juliakannapell/datacamp-course-scheduler/blob/main/Optimal_Course_Order.jpg?raw=true)
 
 ## Constraints:
