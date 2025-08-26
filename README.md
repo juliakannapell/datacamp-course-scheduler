@@ -23,7 +23,7 @@ I accomplish this objective in four parts:
 
 ### Web Scraping
 Packages used: Selenium, BeautifulSoup, Webdriver Manager, Pandas
-![alt text](https://github.com/juliakannapell/datacamp-course-scheduler/DataCamp_Course_Flowchart.jpg?raw=true)
+![alt text](https://github.com/juliakannapell/datacamp-course-scheduler/main/DataCamp_Course_Flowchart.jpg?raw=true)
 
 
 ### Custom Named Entity Recognition Model
